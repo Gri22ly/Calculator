@@ -34,7 +34,7 @@ public class SwingCalculator extends JFrame implements ActionListener {
         Container cp = getContentPane();
         cp.add(upper, BorderLayout.NORTH);
         cp.add(lower, BorderLayout.SOUTH);
-        setSize(400, 200);
+        setSize(600, 200);
 
         upper.add(new JLabel("screen"));
 
@@ -46,8 +46,10 @@ public class SwingCalculator extends JFrame implements ActionListener {
 
         JButton undoBtn = new JButton("undo");
         JButton redoBtn = new JButton("redo");
+        JButton cBtn = new JButton("c");
         upper.add(undoBtn);
         upper.add(redoBtn);
+        upper.add(cBtn);
 
         GridLayout but = new GridLayout(4, 4, 2, 6);
         lower.setLayout(but);
@@ -62,6 +64,10 @@ public class SwingCalculator extends JFrame implements ActionListener {
         });
         redoBtn.addActionListener((e) -> {
             calculator.pressRedo();
+            textField.setText(calculator.getCurrentNumber() + "");
+        });
+        cBtn.addActionListener((e) -> {
+            calculator.pressStartOrClear();
             textField.setText(calculator.getCurrentNumber() + "");
         });
     }
