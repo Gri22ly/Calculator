@@ -14,6 +14,8 @@ import java.util.Arrays;
 
 /**
  * A Java Swing GUI for testing the calculator
+ *
+ * @author feifan
  */
 public class SwingCalculator extends JFrame implements ActionListener {
     private String[] name = {"1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "*", "0", ".", "=", "/"};
